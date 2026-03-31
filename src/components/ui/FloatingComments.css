@@ -1,0 +1,23 @@
+.float-comments-root {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+  pointer-events: none;
+  max-width: 260px;
+}
+
+.float-comment {
+  background: #fef3a0;
+  border: 1.5px solid #c8a830;
+  padding: 6px 12px;
+  font-family: var(--font-hand);
+  font-size: 0.82rem;
+  color: #3d3000;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.12);
+  line-height: 1.4;
+}

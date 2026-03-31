@@ -1,0 +1,77 @@
+.slider-wrap {
+  margin-bottom: 1.75rem;
+}
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.slider-label {
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.slider-badge {
+  font-family: var(--font-note);
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border: 1.5px solid var(--ink-red);
+  color: var(--ink-red);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.slider-track {
+  position: relative;
+  height: 8px;
+  background: var(--paper-dark);
+  border: 1.5px solid var(--ink-faded);
+  border-radius: 0;
+  margin-bottom: 6px;
+}
+.slider-fill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--ink-faded),
+    var(--ink-faded) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  pointer-events: none;
+}
+.slider-input {
+  position: relative;
+  width: 100%;
+  height: 28px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  margin-top: -18px;
+}
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--paper);
+  border: 2.5px solid var(--ink);
+  border-radius: 50%;
+  cursor: grab;
+  box-shadow: 2px 2px 0 var(--ink-faded);
+  transition: box-shadow 0.1s;
+}
+.slider-input::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  box-shadow: 3px 3px 0 var(--ink-red);
+}
+.slider-range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-note);
+  font-size: 0.68rem;
+  color: var(--ink-faded);
+  font-style: italic;
+}

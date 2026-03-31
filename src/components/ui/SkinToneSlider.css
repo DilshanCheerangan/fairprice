@@ -1,0 +1,115 @@
+.skin-slider-wrap {
+  margin-bottom: 2rem;
+}
+
+.skin-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.skin-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.03em;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.skin-track-wrap {
+  position: relative;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.skin-gradient-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  border-radius: 100px;
+  background: linear-gradient(
+    to right,
+    rgb(255, 224, 196),
+    rgb(240, 194, 160),
+    rgb(210, 160, 110),
+    rgb(175, 120, 75),
+    rgb(130, 85, 47),
+    rgb(85, 52, 28)
+  );
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.skin-input {
+  position: relative;
+  width: 100%;
+  height: 28px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.skin-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  cursor: grab;
+}
+
+.skin-input::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+}
+
+.skin-indicator {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  transform: translateX(-50%);
+  bottom: 4px;
+  transition: left 0.05s;
+}
+
+.skin-indicator-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  transition: background 0.1s;
+}
+
+.skin-range-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.skin-range-labels span:first-child,
+.skin-range-labels span:last-child {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.skin-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  flex: 1;
+  padding: 0 8px;
+}

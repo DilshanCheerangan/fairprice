@@ -1,0 +1,116 @@
+/* Shared styles across Step 1/2/3 */
+
+.step-question-label {
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.step-question-sublabel {
+  font-family: var(--font-note);
+  font-size: 0.74rem;
+  color: var(--ink-faded);
+  margin-bottom: 10px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Grid layouts */
+.num-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 0;
+}
+.num-row .num-wrap { margin-bottom: 1.5rem; }
+
+.pill-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 1.75rem;
+}
+.pill-options-3 { grid-template-columns: 1fr 1fr 1fr; }
+.pill-options-2 { grid-template-columns: 1fr 1fr; }
+
+/* Section divider — red underline like a form field */
+.form-divider {
+  border: none;
+  border-top: 1.5px solid rgba(0,0,0,0.15);
+  margin: 1.25rem 0;
+}
+
+@media (max-width: 520px) {
+  .pill-options-3 { grid-template-columns: 1fr 1fr; }
+  .num-row { grid-template-columns: 1fr; }
+}
+
+/* ── Roti Roundness Slider ── */
+.roti-slider-wrap { margin-bottom: 1.5rem; }
+
+.roti-track {
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.roti-input {
+  width: 100%;
+  height: 28px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.roti-input::-webkit-slider-runnable-track {
+  height: 8px;
+  background: var(--paper-dark);
+  border: 1.5px solid var(--ink-faded);
+}
+
+.roti-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  background: var(--paper);
+  border: 2.5px solid var(--ink-red);
+  border-radius: 50%;
+  margin-top: -10px;
+  cursor: grab;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+  font-size: 0; /* no text on thumb */
+}
+
+.roti-input::-webkit-slider-thumb:active { cursor: grabbing; }
+
+.roti-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-note);
+  font-size: 0.68rem;
+  color: var(--ink-faded);
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.roti-score {
+  font-family: var(--font-brush);
+  font-size: 1.1rem;
+  color: var(--ink-red);
+  font-style: normal;
+}
+
+.roti-commentary {
+  font-family: var(--font-hand);
+  font-size: 0.82rem;
+  color: var(--ink-faded);
+  font-style: italic;
+  background: #fef9e0;
+  border-left: 3px solid var(--ink-red);
+  padding: 6px 10px;
+  line-height: 1.5;
+}
+

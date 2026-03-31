@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Caveat+Brush&family=Patrick+Hand&display=swap');
+
+/* ─── Paper Theme Tokens ─────────────────────────────────── */
+:root {
+  --paper: #fdf8ef;
+  --paper-dark: #f0e8d0;
+  --paper-lines: #c8d8e0;
+  --ink: #1a1208;
+  --ink-faded: #4a3f2e;
+  --ink-red: #c0392b;
+  --ink-blue: #2559a7;
+  --ink-green: #1a6b3a;
+  --stamp-red: rgba(192, 57, 43, 0.85);
+  --font-hand: 'Caveat', cursive;
+  --font-brush: 'Caveat Brush', cursive;
+  --font-note: 'Patrick Hand', cursive;
+  --shadow-paper: 4px 4px 0px rgba(0,0,0,0.15), 8px 8px 20px rgba(0,0,0,0.08);
+  --shadow-lift: 2px 2px 0px rgba(0,0,0,0.2), 6px 6px 16px rgba(0,0,0,0.1);
+}
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-hand);
+  background-color: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* ─── Global Notebook Paper Background ──────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    /* Horizontal notebook lines */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 31px,
+      var(--paper-lines) 31px,
+      var(--paper-lines) 32px
+    ),
+    /* Left red margin line */
+    linear-gradient(90deg, transparent 79px, #e88 80px, transparent 80px),
+    /* Paper texture */
+    url('/paper_bg.png');
+  background-size: auto 32px, 100% 100%, 800px 800px;
+  background-repeat: repeat-y, no-repeat, repeat;
+  background-position: 0 0, 0 0, center center;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Paper Card ─────────────────────────────────────────── */
+.paper-card {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  box-shadow: var(--shadow-paper);
+  position: relative;
+}
+
+/* Tape effect top */
+.paper-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 60px;
+  height: 22px;
+  background: rgba(255, 220, 100, 0.7);
+  border: 1px solid rgba(200, 170, 50, 0.5);
+  z-index: 10;
+}
+
+/* ─── Wobbly border utility ──────────────────────────────── */
+.wobbly-border {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  border: 3px solid var(--ink);
+}
+
+/* ─── Scribble underline ─────────────────────────────────── */
+.scribble-underline {
+  text-decoration: underline wavy var(--ink-red) 2px;
+  text-underline-offset: 4px;
+}
+
+/* ─── Stamp effect ───────────────────────────────────────── */
+.stamp {
+  display: inline-block;
+  border: 3px solid var(--stamp-red);
+  color: var(--stamp-red);
+  padding: 2px 10px;
+  font-family: var(--font-brush);
+  transform: rotate(-5deg);
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+
+/* ─── Yellow sticky note ─────────────────────────────────── */
+.sticky-note {
+  background: #fef3a0;
+  border: 1px solid #e8d84a;
+  padding: 10px 14px;
+  font-family: var(--font-hand);
+  font-size: 0.85rem;
+  color: #3d3000;
+  position: relative;
+  box-shadow: 3px 4px 0 rgba(0,0,0,0.12);
+}
+
+.sticky-note::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  border-top: 14px solid #e8c840;
+  border-right: 14px solid transparent;
+}
+
+/* ─── Label text ─────────────────────────────────────────── */
+.label-hand {
+  font-family: var(--font-note);
+  font-size: 0.78rem;
+  color: var(--ink-faded);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ─── Crossed-out text ───────────────────────────────────── */
+.crossed {
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-red);
+  text-decoration-thickness: 2px;
+  opacity: 0.65;
+}
+
+/* ─── Pill buttons (paper-style) ─────────────────────────── */
+.pill-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 10px 14px;
+  background: var(--paper);
+  border: 2px solid var(--ink-faded);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-hand);
+  text-align: left;
+}
+
+.pill-option:hover {
+  background: var(--paper-dark);
+  transform: rotate(-0.5deg) translateY(-2px);
+  box-shadow: 3px 3px 0 var(--ink-faded);
+}
+
+.pill-option.active {
+  background: var(--paper-dark);
+  border-color: var(--ink);
+  border-width: 2.5px;
+  transform: rotate(-1deg);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.pill-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  font-family: var(--font-hand);
+}
+
+.pill-option.active .pill-label {
+  color: var(--ink-red);
+}
+
+.pill-sub {
+  font-size: 0.72rem;
+  color: var(--ink-faded);
+  font-family: var(--font-note);
+}
+
+/* ─── Keyframes ──────────────────────────────────────────── */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+@keyframes stamp-in {
+  0% { transform: rotate(-5deg) scale(2); opacity: 0; }
+  60% { transform: rotate(-5deg) scale(0.95); opacity: 1; }
+  80% { transform: rotate(-5deg) scale(1.05); }
+  100% { transform: rotate(-5deg) scale(1); }
+}
+
+@keyframes scribble-in {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0% 0 0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px) rotate(-1deg); }
+  40% { transform: translateX(3px) rotate(1deg); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--paper-dark); }
+::-webkit-scrollbar-thumb { background: var(--ink-faded); border-radius: 4px; }

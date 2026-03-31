@@ -1,0 +1,38 @@
+.pbar-root { margin-bottom: 1.25rem; }
+.pbar-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-hand);
+  font-size: 0.82rem;
+  color: var(--ink-blue);
+  font-style: italic;
+  margin-bottom: 6px;
+}
+.pbar-count {
+  font-family: var(--font-note);
+  font-size: 0.72rem;
+  color: var(--ink-faded);
+  font-style: normal;
+}
+.pbar-track {
+  display: flex;
+  gap: 4px;
+}
+.pbar-segment {
+  flex: 1;
+  height: 10px;
+  border: 1.5px solid var(--ink-faded);
+  background: transparent;
+  transition: background 0.3s;
+}
+.pbar-segment.filled {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--ink),
+    var(--ink) 2px,
+    transparent 2px,
+    transparent 5px
+  );
+  border-color: var(--ink);
+}

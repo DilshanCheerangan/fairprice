@@ -1,0 +1,65 @@
+.skin-palette-wrap { margin-bottom: 1.75rem; }
+.skin-palette-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.skin-palette-label {
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.skin-selected-badge {
+  font-family: var(--font-note);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border: 1.5px solid;
+  letter-spacing: 0.04em;
+}
+.skin-swatches {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+.skin-swatch {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+.skin-swatch:hover { transform: scale(1.1) rotate(-5deg); }
+.skin-swatch.selected { transform: scale(1.15); }
+.skin-swatch-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2.5px solid var(--ink);
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+.skin-swatch-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2.5px solid var(--ink-red);
+  pointer-events: none;
+}
+.skin-hint-text {
+  margin-top: 6px;
+  font-family: var(--font-hand);
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+  font-style: italic;
+}

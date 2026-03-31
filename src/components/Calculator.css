@@ -1,0 +1,137 @@
+.calc-root {
+  min-height: 100vh;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.calc-doodle {
+  position: absolute;
+  font-family: var(--font-brush);
+  color: var(--ink-faded);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.calc-panel {
+  position: relative;
+  z-index: 1;
+  background: var(--paper);
+  border: 2.5px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink-faded);
+  padding: 2.5rem 2rem;
+  max-width: 520px;
+  width: 100%;
+  transform: rotate(-0.5deg);
+}
+
+.calc-tape {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  background: rgba(255, 220, 100, 0.9);
+  border: 1px solid #c8a830;
+  padding: 2px 24px;
+  font-family: var(--font-note);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: #5a4000;
+  white-space: nowrap;
+}
+
+.calc-pencil {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: block;
+  color: var(--ink-red);
+}
+
+.calc-title {
+  font-family: var(--font-brush);
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.calc-subtitle {
+  font-family: var(--font-hand);
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--ink-faded);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Log messages */
+.calc-log {
+  background: white;
+  border: 1.5px solid var(--ink-faded);
+  padding: 10px 14px;
+  margin-bottom: 1.25rem;
+  min-height: 80px;
+  font-family: var(--font-note);
+  font-size: 0.8rem;
+}
+
+.calc-msg {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 3px 0;
+  color: var(--ink-faded);
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+.calc-msg.active { color: var(--ink); font-weight: 600; }
+.calc-msg-icon { color: var(--ink-green); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+.calc-msg.active .calc-msg-icon { color: var(--ink-red); }
+
+/* Grid progress */
+.calc-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-note);
+  font-size: 0.7rem;
+  color: var(--ink-faded);
+  margin-bottom: 6px;
+}
+.calc-grid-bar {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 3px;
+  margin-bottom: 1.25rem;
+}
+.calc-grid-cell {
+  height: 14px;
+  border: 1.5px solid var(--ink-faded);
+  background: transparent;
+  transition: background 0.2s;
+}
+.calc-grid-cell.filled {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--ink),
+    var(--ink) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  border-color: var(--ink);
+}
+
+.calc-footnote {
+  font-family: var(--font-note);
+  font-size: 0.68rem;
+  color: var(--ink-faded);
+  text-align: center;
+  font-style: italic;
+  border-top: 1px dashed rgba(0,0,0,0.2);
+  padding-top: 10px;
+}

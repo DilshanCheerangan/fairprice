@@ -1,0 +1,217 @@
+.landing {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.landing-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Doodle background images */
+.landing-doodle-left {
+  position: fixed;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  height: 520px;
+  background: url('/paper_bg.png') center/contain no-repeat;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.landing-doodle-right {
+  position: fixed;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 500px;
+  background: url('/flames_bg.png') center/contain no-repeat;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Content ─── */
+.landing-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 3rem 2rem;
+  max-width: 580px;
+  width: 100%;
+}
+
+/* Rubber stamp badge */
+.landing-stamp {
+  font-family: var(--font-brush);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  padding: 4px 16px;
+  border: 2.5px solid var(--stamp-red);
+  color: var(--stamp-red);
+  text-transform: uppercase;
+  transform-origin: center;
+  opacity: 0.85;
+}
+
+/* Title */
+.landing-title {
+  font-family: var(--font-brush);
+  font-size: clamp(3.5rem, 10vw, 6.5rem);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: center;
+  filter: url('#roughen');
+}
+
+.title-q {
+  color: var(--ink-red);
+  font-size: 1.1em;
+}
+
+/* Subtitle */
+.landing-subtitle {
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+  color: var(--ink);
+  text-align: center;
+  font-weight: 600;
+}
+
+.subtitle-aside {
+  font-size: 1rem;
+  color: var(--ink-faded);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Sticky note block */
+.landing-note {
+  background: #fef3a0;
+  border: 1px solid #d4c444;
+  padding: 16px 20px;
+  position: relative;
+  box-shadow: 4px 5px 0 rgba(0,0,0,0.12);
+  max-width: 380px;
+  width: 100%;
+}
+
+.landing-note::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  border-top: 18px solid #c8b830;
+  border-right: 18px solid transparent;
+}
+
+.note-inner {
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  color: #3d3000;
+  line-height: 1.6;
+  padding-left: 6px;
+}
+
+.note-fine {
+  font-size: 0.75rem;
+  color: #7a6000;
+  font-style: italic;
+}
+
+/* CTA button */
+.landing-cta {
+  font-family: var(--font-brush);
+  font-size: 1.4rem;
+  color: var(--paper);
+  background: var(--ink);
+  border: none;
+  padding: 14px 40px;
+  cursor: pointer;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 4px 4px 0 var(--ink-red);
+  letter-spacing: 0.03em;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.landing-cta:hover {
+  background: var(--ink-red);
+  box-shadow: 3px 3px 0 var(--ink), 6px 6px 16px rgba(0,0,0,0.15);
+}
+
+.cta-arrow {
+  font-size: 1.2rem;
+}
+
+/* Disclaimer */
+.landing-disclaimer {
+  font-family: var(--font-note);
+  font-size: 0.72rem;
+  color: var(--ink-faded);
+  text-align: center;
+  font-style: italic;
+  max-width: 340px;
+  line-height: 1.5;
+}
+
+/* Stats */
+.landing-stats {
+  display: flex;
+  gap: 0;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 3px 3px 0 var(--ink-faded);
+  width: 100%;
+  max-width: 440px;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 10px;
+  border-right: 2px solid var(--ink);
+}
+.stat-item:last-child { border-right: none; }
+
+.stat-val {
+  font-family: var(--font-brush);
+  font-size: 1.6rem;
+  color: var(--ink-red);
+}
+
+.stat-label {
+  font-family: var(--font-note);
+  font-size: 0.65rem;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.stat-note {
+  font-family: var(--font-hand);
+  font-size: 0.7rem;
+  color: var(--ink-faded);
+  font-style: italic;
+  margin-top: 2px;
+}

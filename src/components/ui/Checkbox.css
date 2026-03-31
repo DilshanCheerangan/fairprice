@@ -1,0 +1,103 @@
+.checkbox-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  margin-bottom: 10px;
+  user-select: none;
+  position: relative;
+}
+
+.checkbox-wrap:hover {
+  background: var(--glass-hover);
+  border-color: rgba(124, 58, 237, 0.2);
+  transform: translateY(-1px);
+}
+
+.checkbox-wrap.checked {
+  border-color: rgba(124, 58, 237, 0.3);
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.checkbox-box-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.checkbox-box {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1.5px solid var(--glass-border);
+  background: var(--glass-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+  overflow: hidden;
+}
+
+.checkbox-box.checked {
+  background: linear-gradient(135deg, var(--violet), #6d28d9);
+  border-color: var(--violet);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.4);
+}
+
+.checkbox-box svg {
+  width: 14px;
+  height: 14px;
+  color: #fff;
+}
+
+.sparkle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--violet-light);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: sparkle 0.5s ease-out forwards;
+}
+
+.checkbox-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.checkbox-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.checkbox-sublabel {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.checkbox-active-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  color: var(--violet-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
