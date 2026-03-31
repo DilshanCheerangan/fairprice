@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Landing from './components/Landing'
+import SplashScreen from './components/ui/SplashScreen'
 import StepFlow from './components/StepFlow'
 import Calculator from './components/Calculator'
 import Result from './components/Result'
@@ -8,6 +9,7 @@ import FloatingComments from './components/ui/FloatingComments'
 
 export default function App() {
   const [screen, setScreen] = useState('landing')
+  const [isSplash, setIsSplash] = useState(true)
   const [formData, setFormData] = useState({
     // Step 1 — Physical bio-data
     height: 160,
@@ -58,9 +60,12 @@ export default function App() {
 
   return (
     <div style={{ minHeight: '100vh', position: 'relative' }}>
+      <AnimatePresence mode="wait">
+        {isSplash && <SplashScreen key="splash" onComplete={() => setIsSplash(false)} />}
+      </AnimatePresence>
       <FloatingComments comments={comments} />
       <AnimatePresence mode="wait">
-        {screen === 'landing'     && <Landing    key="landing"     onStart={() => setScreen('steps')} />}
+        {!isSplash && screen === 'landing'     && <Landing    key="landing"     onStart={() => setScreen('steps')} />}
         {screen === 'steps'       && <StepFlow   key="steps"       formData={formData} setFormData={setFormData} onCalculate={calculateResult} addComment={addComment} />}
         {screen === 'calculating' && <Calculator key="calculating" />}
         {screen === 'result'      && <Result     key="result"      result={result} formData={formData} onRestart={restart} />}

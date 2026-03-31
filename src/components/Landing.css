@@ -68,6 +68,28 @@
   opacity: 0.85;
 }
 
+/* Logo Branding */
+.landing-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -1rem;
+}
+
+.landing-brand-logo {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+  transform: rotate(-3deg);
+  border: 4px solid transparent;
+  transition: transform 0.3s ease;
+}
+
+.landing-brand-logo:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
 /* Title */
 .landing-title {
   font-family: var(--font-brush);

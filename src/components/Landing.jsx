@@ -77,12 +77,22 @@ export default function Landing({ onStart }) {
           OFFICIAL FORM · NOT LEGAL · DO NOT FRAME
         </motion.div>
 
+        {/* Logo Branding */}
+        <motion.div
+          className="landing-logo-container"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          <img src="/logo.png" alt="FairPrice?" className="landing-brand-logo" />
+        </motion.div>
+
         {/* Title */}
         <motion.h1
           className="landing-title"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
         >
           FairPrice<span className="title-q">?</span>
         </motion.h1>
